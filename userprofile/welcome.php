@@ -34,10 +34,25 @@ while($rows=mysqli_fetch_array($result)){
 <div id="reg-head" class="headrg">Your Profile</div>
 <table border="0" align="center" cellpadding="2" cellspacing="0">
 <tr id="lg-1">
+<td class="tl-4" colspan="2">
+<?php
+	if($rows['image'] == ''){
+            echo '<img src="images/default-avatar.png">';
+         }else{
+            echo '<img src="uploaded_img/'.$rows['image'].'">';
+         }
+?>
+</td>
+</tr>
+<tr id="lg-1">
 <td class="tl-4" colspan="2"><?php echo $rows['fname']; ?> <?php echo $rows['lname']; ?></td>
 </tr>
 <tr id="lg-1">
 <td class="tl-4" colspan="2"><?php echo $rows['about']; ?></td>
+</tr>
+<tr id="lg-1">
+<td class="tl-1"><div align="left" id="tb-name">Start working date:</div></td>
+<td class="tl-4"><?php echo $rows['workdate']; ?></td>
 </tr>
 <tr id="lg-1">
 <td class="tl-4" colspan="2" style="border-top: 1px solid black; text-decoration: underline;">Contacts</td>
@@ -58,30 +73,19 @@ while($rows=mysqli_fetch_array($result)){
 <td colspan="2" style="border-top: 1px solid black;"></td>
 </tr>
 <tr id="lg-1" rowspan="5">
-<td class="tl-1"><div align="left" id="tb-name">Experience:</div></td>
+<td class="tl-1"><div align="left" id="tb-name">Previous Experience:</div></td>
 <td class="tl-4">
-<table>
-<tr>
-<td><?php echo $rows['experience']; ?></td>
-<td><?php echo $rows['experience2']; ?></td>
-</tr>
+<table border="0" align="center" cellpadding="2" cellspacing="0">
+<tr align="left"><td><?php echo $rows['experience']; ?></td></tr>
+<tr><td><?php echo $rows['experience2']; ?></td></tr>
 </table>
 </td>
 </tr>
 <tr id="lg-1">
 <td class="tl-1"><div align="left" id="tb-name">Skills:</div></td>
-<td class="tl-4">
-<table>
-<tr>
-<td><?php echo $rows['skills']; ?></td>
+<td class="tl-4"><?php echo $rows['skills']; ?></td>
 </tr>
-<table>
-</td>
-</tr>
-<tr id="lg-1">
-<td class="tl-1"><div align="left" id="tb-name">Start working date:</div></td>
-<td class="tl-4"><?php echo $rows['workdate']; ?></td>
-</tr>
+
 </table>
 </form>
 </div>

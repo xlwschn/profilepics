@@ -12,7 +12,14 @@ if ($num_rows) {
  $address=$_POST['address'];
  $username=$_POST['username'];
  $password=$_POST['password'];
- if(mysqli_query($con,"INSERT INTO member(fname, lname, address, username, password)VALUES('$fname', '$lname','$address', '$username', '$password')")){ 
+ $image = $_FILES['image']['name'];
+ $image_tmp_name = $_FILES['image']['tmp_name'];
+ $image_folder = 'uploaded_img/'.$image;
+ 
+
+ $insert = mysqli_query($con,"INSERT INTO member(fname, lname, address, username, password, image)VALUES('$fname', '$lname','$address', '$username', '$password', '$image')") or die('query failed');
+ if($insert){ 
+ move_uploaded_file($image_tmp_name, $image_folder);
  header("location: index.php?remarks=success");
  }else{
   $e=mysqli_error($con);

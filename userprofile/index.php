@@ -40,6 +40,14 @@ echo ' <div id="reg-head-fail" class="headrg">Registration Failed! <br> Error: '
 <form name="reg" action="execute.php" onsubmit="return validateForm()" method="post" id="reg">
 <table border="0" align="center" cellpadding="2" cellspacing="0">
 <tr>
+<td align="center">Add Profile Image</td>
+</tr>
+<tr>
+<td>
+<input type="file" name="image" accept="image/jpg, image/jpeg, image/png">
+</td>
+</tr>
+<tr>
 <td>
 <input type="text" name="fname" placeholder="First Name" id="tb-box"/>
 </td>
