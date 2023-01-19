@@ -37,7 +37,7 @@ echo ' <div id="reg-head-fail" class="headrg">Registration Failed! <br> Error: '
 }
 ?>
 </div>
-<form name="reg" action="execute.php" onsubmit="return validateForm()" method="post" id="reg">
+<form name="reg" action="execute.php" onsubmit="return validateForm()" method="post" id="reg"  enctype="multipart/form-data">
 <table border="0" align="center" cellpadding="2" cellspacing="0">
 <tr>
 <td align="center">Add Profile Image</td>

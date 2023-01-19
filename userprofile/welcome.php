@@ -39,7 +39,7 @@ while($rows=mysqli_fetch_array($result)){
 	if($rows['image'] == ''){
             echo '<img src="images/default-avatar.png">';
          }else{
-            echo '<img src="uploaded_img/'.$rows['image'].'">';
+            echo '<img src="uploaded_img/'.$rows['image'].'" alt="" width="350" height="350">';
          }
 ?>
 </td>

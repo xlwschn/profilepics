@@ -16,7 +16,7 @@
   </ul>
  </nav>
 </header>
-<form name="update" action="execute2.php" method="post" id="update">
+<form name="update" action="execute2.php" method="post" id="update"  enctype="multipart/form-data">
 <table border="0" align="center" cellpadding="2" cellspacing="0">
 <tr>
 <td>
