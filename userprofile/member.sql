@@ -12,5 +12,7 @@ CREATE TABLE IF NOT EXISTS `member` (
   `about` varchar(100) NOT NULL,
   `skills` varchar(100) NOT NULL,
   `workdate` varchar(100) NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `docx` varchar(100) NOT NULL,
    PRIMARY KEY (`mem_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

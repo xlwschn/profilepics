@@ -86,7 +86,7 @@ nav li{
 }
 
 #tb-name{
- float:right;
+ float:left;
  font-size:18px;
 }
 #tb-box{
@@ -143,11 +143,10 @@ input::placeholder{
 }
 .tl-4{
  font-size:17px;
- width:80%;
+ width:70%;
  text-align:center;
  color:#000000;
  }
-
 
 
 #login{

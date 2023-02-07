@@ -15,6 +15,9 @@ if(isset($_POST['edit']))
  $experience2=$_POST['experience2'];
  $skills=$_POST['skills'];
  $workdate=$_POST['workdate'];
+ $docx=$_FILES['docx']['name'];
+ $docx_tmp_name = $_FILES['docx']['tmp_name'];
+ $docx_folder = 'docs/'.$docx;
  $update_image = $_FILES['update_image']['name'];
  $update_image_tmp_name = $_FILES['update_image']['tmp_name'];
  $update_image_folder = 'uploaded_img/'.$update_image;
@@ -25,12 +28,13 @@ if(isset($_POST['edit']))
  $res= $row['mem_id'];
  if($res === $loggedin_id)
     {
-		$update = "UPDATE member SET fname='$fname', lname='$lname', address='$address', username='$username', password='$password', about='$about', habitat='$habitat', mobile='$mobile', experience='$experience', experience2='$experience2', image='$update_image', skills='$skills', workdate='$workdate' WHERE mem_id='$loggedin_id'";
+		$update = "UPDATE member SET fname='$fname', lname='$lname', address='$address', username='$username', password='$password', about='$about', habitat='$habitat', mobile='$mobile', experience='$experience', experience2='$experience2', image='$update_image', skills='$skills', workdate='$workdate', docx='$docx' WHERE mem_id='$loggedin_id'";
 		$sql2 = mysqli_query($con,$update);
 
  if($sql2)
        { 
 		   move_uploaded_file($update_image_tmp_name, $update_image_folder);
+		   move_uploaded_file($docx_tmp_name, $docx_folder);
            /*Successful*/
            header('location:welcome.php');
        }

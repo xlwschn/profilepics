@@ -37,7 +37,7 @@ echo ' <div id="reg-head-fail" class="headrg">Registration Failed! <br> Error: '
 }
 ?>
 </div>
-<form name="reg" action="execute.php" onsubmit="return validateForm()" method="post" id="reg"  enctype="multipart/form-data">
+<form name="reg" action="execute.php" onsubmit="return validateForm()" method="post" id="reg" enctype="multipart/form-data">
 <table border="0" align="center" cellpadding="2" cellspacing="0">
 <tr>
 <td align="center">Add Profile Image</td>
@@ -49,20 +49,20 @@ echo ' <div id="reg-head-fail" class="headrg">Registration Failed! <br> Error: '
 </tr>
 <tr>
 <td>
-<input type="text" name="fname" placeholder="First Name" id="tb-box"/>
+<input type="text" name="fname" placeholder="First Name" id="tb-box" required>
 </td>
 </tr>
 <tr>
-<td><input type="text" name="lname" placeholder="Last Name" id="tb-box"/></td>
+<td><input type="text" name="lname" placeholder="Last Name" id="tb-box" required></td>
 </tr>
 <tr>
-<td><input type="text" id="tb-box" placeholder="Email" name="address" /></td>
+<td><input type="text" id="tb-box" placeholder="Email" name="address" required></td>
 </tr>
 <tr>
-<td><input type="text" id="tb-box" placeholder="Username" name="username" /></td>
+<td><input type="text" id="tb-box" placeholder="Username" name="username" required></td>
 </tr>
 <tr>
-<td><input id="tb-box" type="password" placeholder="Password" name="password" /></td>
+<td><input id="tb-box" type="password" placeholder="Password" name="password" required></td>
 </tr>
 </table>
 <div id="st"><input name="submit" type="submit" value="Submit" id="st-btn"/></div>
@@ -83,10 +83,10 @@ echo ' <div id="reg-head-fail" class="headrg">Login Failed!, Invalid Credentials
 ?>
 <table border="0" align="center" cellpadding="2" cellspacing="0">
 <tr id="lg-1">
-<td><input type="text" id="tb-box" placeholder="Username" name="username" /></td>
+<td><input type="text" id="tb-box" placeholder="Username" name="username" required></td>
 </tr>
 <tr id="lg-1">
-<td><input id="tb-box" type="password" placeholder="Password" name="password" /></td>
+<td><input id="tb-box" type="password" placeholder="Password" name="password" required></td>
 </tr>
 </table>
 <div id="st"><input name="submit" type="submit" value="Login" id="st-btn"/></div>

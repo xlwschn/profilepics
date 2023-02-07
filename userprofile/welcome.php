@@ -39,7 +39,7 @@ while($rows=mysqli_fetch_array($result)){
 	if($rows['image'] == ''){
             echo '<img src="images/default-avatar.png">';
          }else{
-            echo '<img src="uploaded_img/'.$rows['image'].'" alt="" width="350" height="350">';
+            echo '<img src="uploaded_img/'.$rows['image'].' " alt="" width="300" height="300">';
          }
 ?>
 </td>
@@ -77,7 +77,7 @@ while($rows=mysqli_fetch_array($result)){
 <td class="tl-4">
 <table border="0" align="center" cellpadding="2" cellspacing="0">
 <tr align="left"><td><?php echo $rows['experience']; ?></td></tr>
-<tr><td><?php echo $rows['experience2']; ?></td></tr>
+<tr align="left"><td><?php echo $rows['experience2']; ?></td></tr>
 </table>
 </td>
 </tr>
@@ -85,7 +85,23 @@ while($rows=mysqli_fetch_array($result)){
 <td class="tl-1"><div align="left" id="tb-name">Skills:</div></td>
 <td class="tl-4"><?php echo $rows['skills']; ?></td>
 </tr>
-
+<tr>
+<td colspan="2" style="border-top: 1px solid black;"></td>
+</tr>
+<tr id="lg-1">
+<td class="tl-4" colspan="2">Awards/Certificate:</td>
+</tr>
+<tr>
+<td class="tl-4" colspan="2" height="600px">
+<?php 
+if($rows['docx'] == ''){
+            echo '<p>Awards/Certificate here</p>';
+         }else{
+			 echo '<iframe src="docs/'.$rows['docx'].' " alt="" width="100%" height="100%"></iframe>';
+		 }
+?>
+</td>
+</tr>
 </table>
 </form>
 </div>

@@ -17,7 +17,7 @@ if ($num_rows) {
  $image_folder = 'uploaded_img/'.$image;
  
 
- $insert = mysqli_query($con,"INSERT INTO member(fname, lname, address, username, password, image)VALUES('$fname', '$lname','$address', '$username', '$password', '$image')") or die('query failed');
+ $insert = mysqli_query($con,"INSERT INTO member(fname, lname, address, username, password, image)VALUES('$fname', '$lname', '$address', '$username', '$password', '$image')") or die('query failed');
  if($insert){ 
  move_uploaded_file($image_tmp_name, $image_folder);
  header("location: index.php?remarks=success");
